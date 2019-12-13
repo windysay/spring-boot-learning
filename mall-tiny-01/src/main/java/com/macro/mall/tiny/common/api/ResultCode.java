@@ -1,0 +1,33 @@
+package com.macro.mall.tiny.common.api;
+
+/**
+ * 枚举了一些常用API操作码
+ * Created by macro on 2019/4/19.
+ */
+public enum ResultCode implements IErrorCode {
+    // 因为已经定义了带参数的构造器，所以在列出枚举值时必须传入对应的参数
+    SUCCESS(200, "操作成功"),
+    FAILED(500, "操作失败"),
+    VALIDATE_FAILED(404, "参数检验失败"),
+    UNAUTHORIZED(401, "暂未登录或token已经过期"),
+    FORBIDDEN(403, "没有相关权限");
+    // 定义一个 private 修饰的实例变量
+    private long code;
+    private String message;
+
+    // 定义一个带参数的构造器，枚举类的构造器只能使用 private 修饰
+    private ResultCode(long code, String message) {
+        this.code = code;
+        this.message = message;
+    }
+
+    @Override
+    public long getCode() {
+        return code;
+    }
+
+    @Override
+    public String getMessage() {
+        return message;
+    }
+}
