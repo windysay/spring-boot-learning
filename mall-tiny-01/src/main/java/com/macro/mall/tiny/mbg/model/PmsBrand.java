@@ -1,54 +1,32 @@
 package com.macro.mall.tiny.mbg.model;
 
+import io.swagger.annotations.ApiModelProperty;
+
 import java.io.Serializable;
 
 public class PmsBrand implements Serializable {
-    private static final long serialVersionUID = 1L;
     private Long id;
+
     private String name;
-    /**
-     * 首字母
-     *
-     * @mbg.generated
-     */
-    private String firstLetter;
+
+    private static final long serialVersionUID = 1L;
+
     private Integer sort;
-    /**
-     * 是否为品牌制造商：0->不是；1->是
-     *
-     * @mbg.generated
-     */
-    private Integer factoryStatus;
+    @ApiModelProperty(value = "首字母")
+    private String firstLetter;
+
     private Integer showStatus;
-    /**
-     * 产品数量
-     *
-     * @mbg.generated
-     */
+    @ApiModelProperty(value = "是否为品牌制造商：0->不是；1->是")
+    private Integer factoryStatus;
+    @ApiModelProperty(value = "产品数量")
     private Integer productCount;
-    /**
-     * 产品评论数量
-     *
-     * @mbg.generated
-     */
+    @ApiModelProperty(value = "产品评论数量")
     private Integer productCommentCount;
-    /**
-     * 品牌logo
-     *
-     * @mbg.generated
-     */
+    @ApiModelProperty(value = "品牌logo")
     private String logo;
-    /**
-     * 专区大图
-     *
-     * @mbg.generated
-     */
+    @ApiModelProperty(value = "专区大图")
     private String bigPic;
-    /**
-     * 品牌故事
-     *
-     * @mbg.generated
-     */
+    @ApiModelProperty(value = "品牌故事")
     private String brandStory;
 
     public Long getId() {
